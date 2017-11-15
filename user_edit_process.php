@@ -17,7 +17,7 @@ $data = $result->fetch_object();
 
 if ($data->password <> $password) {
     $mysqli->close();
-    echo "<form method='post' action='user_edit.php' id='return' >
+    echo "<form method='post' action='user_edit.php' id='return' hidden>
             <input type='text' name='return' value='passwordfail'>
             <input type='submit'>
         </form>";
@@ -35,7 +35,7 @@ if ($data->password <> $password) {
     $result = $mysqli->query($sql);
 
     if ($result) {
-        echo "<form method='post' action='user_edit.php' id='return' >
+        echo "<form method='post' action='user_edit.php' id='return' hidden>
             <input type='text' name='return' value='ok'>
             <input type='submit'>
         </form>";
@@ -43,7 +43,7 @@ if ($data->password <> $password) {
          document.getElementById('return').submit(); // SUBMIT FORM
    </script>";
     } else {
-        echo "<form method='post' action='user_edit.php' id='return' >
+        echo "<form method='post' action='user_edit.php' id='return' hidden>
             <input type='text' name='return' value='fail'>
             <input type='submit'>
         </form>";
