@@ -6,7 +6,9 @@ $password = md5($_POST["password"]);
 
 //connect to database
 include("sql.php");
-$mysqli = ConnectDB();
+
+    $mysqli = ConnectDB();
+
 
 $sql = "SELECT username, password FROM user WHERE username='$username' OR email='$username'  AND password='$password'";
 
