@@ -1,37 +1,83 @@
 <?php
-?>
-<!DOCTYPE html>
-<html lang="en">
+include 'header.php';
+
+if ($login === 'true') {
+    echo "You have already login to the site.<p>";
+    echo "<a href='index.php'>Return to home page.</a>";
+
+} else
+    echo "<!DOCTYPE html>
+<html lang='en'>
 <head>
-    <meta charset="UTF-8">
+    <meta charset='UTF-8'>
     <title>Register</title>
 </head>
 <body>
-<p><strong>User Registration</strong></p>
-<form method="post" action="register_process.php">
-    <table width="400" border="0" cellspacing="5">
-        <tr>
-            <td><label>Username: </label></td>
-            <td><input name="username" type="text" required autofocus /></td>
-        </tr>
-        <tr>
-            <td><label>Password: </label></td>
-            <td><input name="password" type="password" required /></td>
-        </tr>
-        <tr>
-            <td>Phone Number: </td>
-            <td><input name="tel" type="tel" pattern="[0-9]{8}" placeholder="12345678"/></td>
-        </tr>
-        <tr>
-            <td>Email Address: </td>
-            <td><input name="email" type="email" placeholder="you@example.com" /></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td><input type="submit" name="Submit" value="Submit" />
-                <input type="reset" name="Reset" value="Reset" /></td>
-        </tr>
-    </table>
-</form>
+<div class=\"container\">
+    <h1 class=\"well\">Registration Form</h1>
+	<div class=\"col-lg-12 well\">
+	<div class=\"row\">
+				<form action='register_process.php'  onsubmit='return passwordcheck()' method='post'>
+				<div class=\"col-sm-12 form-group\">
+					<label>User Name</label>
+					<input type=\"text\" placeholder=\"Enter Username Here..\" class=\"form-control\" name='username'>
+				</div>
+				<div class=\"col-sm-12 form-group\">
+					<label>Email Address</label>
+					<input type=\"email\" placeholder=\"Enter Email Address Here..\" class=\"form-control\" name='email'>
+				</div>
+				<div class=\"col-sm-12 form-group\">
+					<label>Password</label>
+					<input type=\"password\" placeholder=\"Enter Password Here..\" class=\"form-control\" name='password' id='password'>
+				</div>
+				<div class=\"col-sm-12 form-group\">
+					<label>Confirm Password</label>
+					<input type=\"password\" placeholder=\"Confirm Password Here..\" class=\"form-control\" id='password2'>
+				</div>
+					<div class=\"col-sm-12\">
+						<div class=\"row\">
+							<div class=\"col-sm-6 form-group\">
+								<label>First Name</label>
+								<input type=\"text\" placeholder=\"Enter First Name Here..\" class=\"form-control\" name='fname'>
+							</div>
+							<div class=\"col-sm-6 form-group\">
+								<label>Last Name</label>
+								<input type=\"text\" placeholder=\"Enter Last Name Here..\" class=\"form-control\" name='lname'>
+							</div>
+						</div>						
+					<div class=\"form-group\">
+						<label>Phone Number</label>
+						<input type=\"text\" placeholder=\"Enter Phone Number Here..\" class=\"form-control\" name='tel'>
+					</div>		
+					
+					<button type=\"submit\" class=\"btn btn-lg btn-info\">Submit</button>					
+					</div>
+				</form> 
+				</div>
+	</div>
+	</div>
 </body>
+</html>";
+
+echo "<script type='text/javascript'>
+passwordcheck();
+</script>
+;"
+
+?>
+<html>
+<script type="text/javascript">
+    function passwordcheck() {
+        var pass1 = document.getElementById("password").value;
+        var pass2 = document.getElementById("password2").value;
+        var ok = true;
+        if (pass1 != pass2) {
+            alert("Passwords Do not match");
+            document.getElementById("password").style.borderColor = "#E34234";
+            document.getElementById("password2").style.borderColor = "#E34234";
+            ok = false;
+        }
+        return ok;
+    }
+</script>
 </html>
