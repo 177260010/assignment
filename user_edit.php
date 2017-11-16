@@ -26,7 +26,7 @@ if ($login <> 'true') {
 <html lang='en'>
 <head>
     <meta charset='UTF-8'>
-    <title>Register</title>
+    <title>User Edit</title>
 </head>
 <body>
 <div class=\"container\">
@@ -35,6 +35,7 @@ if ($login <> 'true') {
 	<div class=\"row\">
 				<form action='user_edit_process.php' method='post' onsubmit='return passwordcheck()'>
 				<div class=\"col-sm-12 form-group\">";
+
 if ((isset($_POST['return']))){
     $return = $_POST['return'];
     switch ($return) {

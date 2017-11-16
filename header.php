@@ -9,7 +9,20 @@
 
 <?php
 session_start();
-
+include "check_login.php";
+$login = check_login();
+if ($login === 'admin'){
+    echo "
+    <nav class='navbar navbar-inverse'>
+  <div class='container-fluid'>
+    <div class='navbar-header'>
+      <a class='navbar-brand' href=''#'>Vehicle Booking</a>
+    </div>
+    <ul class='nav navbar-nav'>
+      <li class='active'><a href=index.php>Home</a></li>
+      <li><a  href=admin_main.php>Admin Page</a></li></ul>
+    ";
+} else {
 echo "<nav class='navbar navbar-inverse'>
   <div class='container-fluid'>
     <div class='navbar-header'>
@@ -18,20 +31,18 @@ echo "<nav class='navbar navbar-inverse'>
     <ul class='nav navbar-nav'>
       <li class='active'><a href=index.php>Home</a></li>
       <li class='dropdown'>
-        <a class='dropdown-toggle' data-toggle='dropdown' href=''#'>Page 1
+        <a class='dropdown-toggle' data-toggle='dropdown' href=''#'>Booking
 <span class='caret'></span></a>
         <ul class='dropdown-menu'>
-          <li><a href=''#'>Page 1-1</a></li>
-          <li><a href=''#'>Page 1-2</a></li>
-          <li><a href=''#'>Page 1-3</a></li>
+          <li><a href=booking_list.php>New Booking</a></li>
+          <li><a href=''#'>My Booking</a></li>
         </ul>
       </li>
-      <li><a href=''#'>Page 2</a></li>
-      <li><a href=''#'>Page 3</a></li>
+      <li><a href=''#'>Our Cars</a></li>
+      <li><a href=''#'>About US</a></li>
     </ul>";
-include "check_login.php";
-$login = check_login();
-if ($login === "true" && isset($_SESSION['login'])) {
+}
+if ($login === "user" && isset($_SESSION['login'])) {
     $username = $_SESSION['user'];
     echo "<ul class=\"nav navbar-nav navbar-right\">
       <li class='dropdown'>
@@ -43,6 +54,12 @@ if ($login === "true" && isset($_SESSION['login'])) {
       </li>
       <li><a href='logout_process.php'><span class='glyphicon glyphicon-log-out'></span>Logout</a></li>
     </ul>";
+} elseif ($login === 'admin'){
+
+    echo "<ul class=\"nav navbar-nav navbar-right\">
+      <li><a href=''><span class=\"glyphicon glyphicon-user\"></span>Admin</a></li>
+      <li><a href='logout_process.php'><span class='glyphicon glyphicon-log-out'></span>Logout</a></li></ul>";
+
 } else echo "
        <ul class=\"nav navbar-nav navbar-right\">
       <li><a href=register.php><span class=\"glyphicon glyphicon-user\"></span> Sign Up</a></li>

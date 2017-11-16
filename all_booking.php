@@ -14,7 +14,7 @@ echo "Number of bookings: $result->num_rows<p>";
 $mysqli->close();
 ?>
 
-<table width='800'>
+<table>
     <tr>
         <td bgcolor="#003366"><span style="color:white">Booking Time</span></td>
         <td bgcolor="#003366"><span style="color:white">Car Type</span></td>
