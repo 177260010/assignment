@@ -1,7 +1,7 @@
 <?php
 include 'header.php';
 
-if ($login <> 'true') {
+if ($login <> 'userg') {
     echo 'Please Login First.<p>';
     echo "<a href='login.php'>login.</a>";
 
