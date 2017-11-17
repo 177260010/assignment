@@ -1,6 +1,5 @@
 <?php
 include ("header.php");
-//check admin
 include ("check_admin.php");
 ?>
 

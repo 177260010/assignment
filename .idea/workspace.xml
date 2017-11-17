@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="1156fe4e-82d6-4894-8efd-8f0ba35708e9" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/check_admin.php" afterPath="$PROJECT_DIR$/check_admin.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -52,8 +53,8 @@
       <file leaf-file-name="check_admin.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/check_admin.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="7" column="5" lean-forward="false" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
+            <state relative-caret-position="285">
+              <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -279,7 +280,6 @@
         <option value="$PROJECT_DIR$/admin_login.php" />
         <option value="$PROJECT_DIR$/check_login.php" />
         <option value="$PROJECT_DIR$/admin_login_process.php" />
-        <option value="$PROJECT_DIR$/check_admin.php" />
         <option value="$PROJECT_DIR$/admin_main.php" />
         <option value="$PROJECT_DIR$/add_veichle.php" />
         <option value="$PROJECT_DIR$/add_veichle_process.php" />
@@ -295,6 +295,7 @@
         <option value="$PROJECT_DIR$/login.php" />
         <option value="$PROJECT_DIR$/register.php" />
         <option value="$PROJECT_DIR$/header.php" />
+        <option value="$PROJECT_DIR$/check_admin.php" />
       </list>
     </option>
   </component>
@@ -380,12 +381,12 @@
       <workItem from="1510624976365" duration="1198000" />
       <workItem from="1510641860182" duration="28037000" />
       <workItem from="1510768667561" duration="26402000" />
-      <workItem from="1510903467395" duration="335000" />
+      <workItem from="1510903467395" duration="402000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="102079000" />
+    <option name="totallyTimeSpent" value="102146000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -954,8 +955,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/check_admin.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="7" column="5" lean-forward="false" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
+        <state relative-caret-position="285">
+          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
           <folding />
         </state>
       </provider>
