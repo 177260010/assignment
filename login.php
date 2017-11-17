@@ -1,6 +1,6 @@
 <?php
 include 'header.php';
-if ($login === 'user') {
+if ($login <> 'false') {
     echo "You have already login to the site.<p>";
     echo "<a href='index.php'>Return to home page.</a>";
 } else

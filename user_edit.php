@@ -1,7 +1,7 @@
 <?php
 include('header.php');
 
-if ($login <> 'true') {
+if ($login <> 'user') {
     echo 'Please Login First';
 } else {
 

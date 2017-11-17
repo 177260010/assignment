@@ -1,11 +1,11 @@
 <?php
 include 'header.php';
 
-if ($login === 'true') {
+if ($login <> 'false') {
     echo "You have already login to the site.<p>";
     echo "<a href='index.php'>Return to home page.</a>";
 
-} else
+} else{
     echo "<!DOCTYPE html>
 <html lang='en'>
 <head>
@@ -66,8 +66,8 @@ if (isset($_POST['regfail'])) {
 
 echo "<script type='text/javascript'>
 checkfield();
-</script>;"
-
+</script>;";
+}
 ?>
 
 <html>

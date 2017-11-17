@@ -2,6 +2,13 @@
 
 //check login
 include ("header.php");
+if ($login <> 'user') {
+    echo 'Please Login First.';
+    exit();
+
+}
+
+else {
 //connect to database
 include "sql.php";
 
@@ -41,8 +48,9 @@ $mysqli->close();
         echo "<tr>"."<td>"."No results"."</td>"."</tr>";
     }
 
-    ?>
-</table>
+
+echo  "</table>
 <p/>
-<a href="booking_list.php">New Booking</a><p/>
-<a href="index.php">Home Page</a>
+<a href='booking_list.php'>New Booking</a><p/>
+<a href='index.php'>Home Page</a>";
+   } ?>
