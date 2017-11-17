@@ -108,7 +108,7 @@ checkfield();
 
 <html>
 <script type="text/javascript">
-    function checkfield() {
+    function passwordcheck() {
         var pass1 = document.getElementById("newpassword").value;
         var pass2 = document.getElementById("newpassword2").value;
         var ok = true;

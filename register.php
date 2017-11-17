@@ -72,7 +72,7 @@ checkfield();
 
 <html>
 <script type="text/javascript">
-    function checkfield() {
+    function passwordcheck() {
         var pass1 = document.getElementById("password").value;
         var pass2 = document.getElementById("password2").value;
         var ok = true;
