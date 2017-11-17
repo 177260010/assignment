@@ -26,7 +26,7 @@ if ($login === 'admin'){
 echo "<nav class='navbar navbar-inverse'>
   <div class='container-fluid'>
     <div class='navbar-header'>
-      <a class='navbar-brand' href=''#'>Vehicle Booking</a>
+      <a class='navbar-brand' href=index.php>Vehicle Booking</a>
     </div>
     <ul class='nav navbar-nav'>
       <li class='active'><a href=index.php>Home</a></li>
