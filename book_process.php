@@ -6,13 +6,15 @@ include "check_login.php";
 include "sql.php";
 $mysqli = ConnectDB();
 
-$car = $_POST['cars'];
+$name = $_POST['name'];
+$carid = $_POST['carid'];
 $userid = $_SESSION['userid'];
-$origin = $_POST['origin'];
-$dest = $_POST['dest'];
-$time = $_POST['time'];
+$bloc = $_POST['bloc'];
+$rloc = $_POST['rloc'];
+$stime = $_POST['stime'];
+$etime = $_POST['etime'];
 
-$sql = "INSERT INTO booking(user_id, car_type, origin, destination, time) VALUES ('$userid','$car','$origin','$dest','$time')";
+$sql = "INSERT INTO booking(user_id, car_id, bookloc, returnloc, start_t, end_t) VALUES ('$userid','$carid','$bloc','$rloc','$stime', '$etime')";
 
 $result = $mysqli->query($sql);
 if($result)
@@ -20,4 +22,4 @@ if($result)
 else
     echo "Booking Fail"."<p>";
 echo "<a href ='mybooking.php'>View Booking</a>.<p>";
-echo "<a href='main.php'>Go to Home Page</a>";
+echo "<a href='index.php'>Go to Home Page</a>";

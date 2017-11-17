@@ -1,13 +1,13 @@
 <?php
-session_start();
+
 //check login
-include ("check_login.php");
+include ("header.php");
 //connect to database
 include "sql.php";
 
 $mysqli = ConnectDB();
 $userid = $_SESSION['userid'];
-$sql = "SELECT username, tel, booking.id , booking.car_type, booking.origin, booking.destination, booking.time FROM user CROSS JOIN booking WHERE user.id = '$userid' AND user.id = user_id";
+$sql = "SELECT booking.id, booking.bookloc, booking.returnloc, booking.start_t, booking.end_t FROM user CROSS JOIN booking WHERE user.id = '$userid' AND user.id = user_id";
 
 $result = $mysqli->query($sql);
 
@@ -15,13 +15,14 @@ echo "Number of bookings: $result->num_rows<p>";
 $mysqli->close();
 ?>
 
-<table width='800'>
+<table class="table table-bordered">
     <tr>
-        <td bgcolor="#003366"><span style="color:white">Booking Time</span></td>
-        <td bgcolor="#003366"><span style="color:white">Car Type</span></td>
-        <td bgcolor="#003366"><span style="color:white">Origin</span></td>
-        <td bgcolor="#003366"><span style="color:white">Destination</span></td>
-        <td bgcolor="#003366"><span style="color:white"></span></td>
+        <td>Booking ID</td>
+        <td>Booking Location</td>
+        <td>Return Location</td>
+        <td>Start Time</td>
+        <td>Return Time</td>
+        <td></td>
     </tr>
     <?php
 
@@ -29,11 +30,11 @@ $mysqli->close();
         while($row = $result->fetch_object()){
             echo
                 "<tr>".
-                "<td>".$row->time."</td>".
-                "<td>".$row->car_type."</td>".
-                "<td>".$row->origin."</td>".
-                "<td>".$row->destination."</td>".
-                "<td>"."<form action='booking_update.php' method='post'><input type='hidden' name='delete' value='$row->id'><input type='submit' value='Delete'>"."</form>"."</td>".
+                "<td>".$row->id."</td>".
+                "<td>".$row->bookloc."</td>".
+                "<td>".$row->returnloc."</td>".
+                "<td>".$row->start_t."</td>".
+                "<td>".$row->end_t."</td>".
                 "</tr>";
         }
     }else{
@@ -43,5 +44,5 @@ $mysqli->close();
     ?>
 </table>
 <p/>
-<a href="vehicle_book.php">New Booking</a><p/>
-<a href="main.php">Home Page</a>
+<a href="booking_list.php">New Booking</a><p/>
+<a href="index.php">Home Page</a>

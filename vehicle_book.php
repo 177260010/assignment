@@ -1,117 +1,92 @@
 <?php
 include 'header.php';
 
-if ($login <> 'userg') {
+if ($login <> 'user') {
     echo 'Please Login First.<p>';
     echo "<a href='login.php'>login.</a>";
 
-} else echo "
+} else {
+
+    $carid = $_POST['id'];
+    $price = $_POST['price'];
+    $img = $_POST['img'];
+    $name = $_POST['name'];
+
+    echo "
 
 <html>
 <title>Vehicle Booking</title>
 <body>
 <div class='container'>
-    <form class=\"form-horizontal\">
+    <form class=\"form-horizontal\" method='post' action='book_process.php'>
 <fieldset>
 
-<!-- Form Name -->
+
 <legend>Booking Form</legend>
 
-<!-- Text input-->
+
 <div class=\"form-group\">
-  <label class=\"col-md-4 control-label\" for=\"name\">Car Type</label>  
+  <label class=\"col-md-4 control-label\" >Car Type</label>  
   <div class=\"col-md-4\">
-  <input id=\"cartype\" name=\"cartype\" type=\"text\" placeholder=\"Enter your name\" class=\"form-control input-md\" required=\"\">
+  <img src='$img'>
     
   </div>
 </div>
 
-<!-- Text input-->
 <div class=\"form-group\">
-  <label class=\"col-md-4 control-label\" for=\"email\">Email</label>  
+  <label class=\"col-md-4 control-label\" for=\"name\">Car Name</label>  
   <div class=\"col-md-4\">
-  <input id=\"email\" name=\"email\" type=\"text\" placeholder=\"Enter your email id\" class=\"form-control input-md\" required=\"\">
+  <input id=\"name\" name=\"name\" type=\"text\" value='$name' class=\"form-control input-md\" readonly>
     
   </div>
 </div>
 
-<!-- Password input-->
 <div class=\"form-group\">
-  <label class=\"col-md-4 control-label\" for=\"password\">Password</label>
+  <label class=\"col-md-4 control-label\" for=\"bloc\">Book Location</label>  
   <div class=\"col-md-4\">
-    <input id=\"password\" name=\"password\" type=\"password\" placeholder=\"Enter a password\" class=\"form-control input-md\" required=\"\">
+  <input id=\"bloc\" name=\"bloc\" type=\"text\" placeholder=\"Enter your book location\" class=\"form-control input-md\" required=\"\">
     
   </div>
 </div>
 
-<!-- Text input-->
 <div class=\"form-group\">
-  <label class=\"col-md-4 control-label\" for=\"contact\">Contact no.</label>  
+  <label class=\"col-md-4 control-label\" for=\"rloc\">Return location</label>  
   <div class=\"col-md-4\">
-  <input id=\"contact\" name=\"contact\" type=\"text\" placeholder=\"Enter your contact no.\" class=\"form-control input-md\" required=\"\">
+  <input id=\"rloc\" name=\"rloc\" type=\"text\" placeholder=\"Enter your return location\" class=\"form-control input-md\" required=\"\">
     
   </div>
 </div>
 
-<!-- Select Basic -->
 <div class=\"form-group\">
-  <label class=\"col-md-4 control-label\" for=\"blood_group\">Blood Group</label>
+  <label class=\"col-md-4 control-label\" for=\"stime\">Start Time</label>  
   <div class=\"col-md-4\">
-    <select id=\"blood_group\" name=\"blood_group\" class=\"form-control\">
-      <option value=\"-1\">Select</option>
-      <option value=\"1\">A+</option>
-      <option value=\"2\">B+</option>
-      <option value=\"3\">AB+</option>
-      <option value=\"4\">O+</option>
-      <option value=\"5\">A-</option>
-      <option value=\"6\">B-</option>
-      <option value=\"7\">AB-</option>
-      <option value=\"8\">O-</option>
-    </select>
-  </div>
-</div>
-
-<!-- Text input-->
-<div class=\"form-group\">
-  <label class=\"col-md-4 control-label\" for=\"street\">Street</label>  
-  <div class=\"col-md-4\">
-  <input id=\"street\" name=\"street\" type=\"text\" placeholder=\"Enter your street\" class=\"form-control input-md\" required=\"\">
+  <input id=\"stime\" name=\"stime\" type=\"datetime-local\" onchange='price()' class=\"form-control input-md\" required=\"\">
     
   </div>
 </div>
 
-<!-- Text input-->
 <div class=\"form-group\">
-  <label class=\"col-md-4 control-label\" for=\"area\">Area</label>  
+  <label class=\"col-md-4 control-label\" for=\"etime\">End Time</label>  
   <div class=\"col-md-4\">
-  <input id=\"area\" name=\"area\" type=\"text\" placeholder=\"Enter your area\" class=\"form-control input-md\" required=\"\">
+  <input id=\"etime\" name=\"etime\" type=\"datetime-local\" onchange='price()' onkeyup='this.onchange' onkeydown='this.onchange' class=\"form-control input-md\" required=\"\">
     
   </div>
 </div>
 
-<!-- Text input-->
 <div class=\"form-group\">
-  <label class=\"col-md-4 control-label\" for=\"city\">City</label>  
+  <label class=\"col-md-4 control-label\" for=\"price\">Price</label>  
   <div class=\"col-md-4\">
-  <input id=\"city\" name=\"city\" type=\"text\" placeholder=\"Enter your city\" class=\"form-control input-md\" required=\"\">
+  <input id=\"price\" name=\"price\" type=\"text\" class=\"form-control input-md\" value='$$price /H' readonly>
     
   </div>
 </div>
 
-<!-- Text input-->
-<div class=\"form-group\">
-  <label class=\"col-md-4 control-label\" for=\"dist\">District</label>  
-  <div class=\"col-md-4\">
-  <input id=\"dist\" name=\"dist\" type=\"text\" placeholder=\"Enter your district\" class=\"form-control input-md\" required=\"\">
-    
-  </div>
-</div>
 
-<!-- Button -->
 <div class=\"form-group\">
-  <label class=\"col-md-4 control-label\" for=\"signup\"></label>
+  <label class=\"col-md-4 control-label\" for=\"submit\"></label>
   <div class=\"col-md-4\">
-    <button id=\"signup\" name=\"signup\" class=\"btn btn-success\">Sign Up</button>
+  <input type='text' value='$carid' name='carid' hidden>
+    <input type='submit' id=\"submit\" name=\"submit\" class=\"btn btn-success\">
   </div>
 </div>
 
@@ -122,3 +97,6 @@ if ($login <> 'userg') {
 </body>
 </html>
 ";
+}
+
+?>

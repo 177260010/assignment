@@ -42,7 +42,10 @@ $mysqli->close();
                 "<td>" . $row->name . "</td>" .
                 "<td>" . "$" . $row->price . "/H" . "</td>" .
                 "<td>" . "<form method='post' name=''book action='vehicle_book.php'>" .
-                "<input type='text' value='$row->id' hidden>" .
+                "<input type='text' name='id' value='$row->id' hidden>" .
+                "<input type='text' name='name' value='$row->name' hidden>" .
+                "<input type='text' name='img' value='$row->car_img' hidden>" .
+                "<input type='text' name='price' value='$row->price' hidden>" .
                 "<input type='submit' value='Book'>" .
                 "</form>" . "</td>" .
                 "</tr>";

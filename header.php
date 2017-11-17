@@ -16,7 +16,7 @@ if ($login === 'admin'){
     <nav class='navbar navbar-inverse'>
   <div class='container-fluid'>
     <div class='navbar-header'>
-      <a class='navbar-brand' href=''#'>Vehicle Booking</a>
+      <a class='navbar-brand' href=index.php>Vehicle Booking</a>
     </div>
     <ul class='nav navbar-nav'>
       <li class='active'><a href=index.php>Home</a></li>
@@ -35,11 +35,10 @@ echo "<nav class='navbar navbar-inverse'>
 <span class='caret'></span></a>
         <ul class='dropdown-menu'>
           <li><a href=booking_list.php>New Booking</a></li>
-          <li><a href=''#'>My Booking</a></li>
+          <li><a href=mybooking.php>My Booking</a></li>
         </ul>
       </li>
-      <li><a href=''#'>Our Cars</a></li>
-      <li><a href=''#'>About US</a></li>
+      <li><a href=About_US.php>About US</a></li>
     </ul>";
 }
 if ($login === "user" && isset($_SESSION['login'])) {
